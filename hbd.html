@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#141852">
+  <meta name="msapplication-navbutton-color" content="#141852">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#141852">
+  <title>Happy Birthday to You!!!</title>
+  <meta name="title" content="Happy Birthday to You">
+  <meta name="description" content="Wishing you a very Happy Birthday Dear">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Happy Birthday to you">
+  <meta property="og:description" content="Wishing you a very Happy Birthday Dear">
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --readTime: 33s
+    }
+  </style>
+  <link rel="stylesheet" href="css.css">
+  
+</head>
+
+<body> 
+  <audio class="burst-aud">
+    <source src="pop.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+  <audio class="blast-aud">
+    <source src="blast.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+  <audio class="hbd-aud" __idm_id__="2064385">
+    <source src="hbd.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio> <audio
+    class="switch-aud" __idm_id__="2064386">
+    <source src="switch.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+  <audio class="door-aud">
+    <source src="door.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio> <audio
+    class="haunt-aud" __idm_id__="2064387">
+    <source src="haunted-bgm.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+  <div class="content"> <img src="flag-right.png" alt="flags" class="flag flag--c-left"> <img
+      src="flag-left.png" alt="flags" class="flag flag--left"> <img src="flag-left.png" alt="flags"
+      class="flag flag--c-right"> <img src="flag-right.png" alt="flags" class="flag flag--right"> <img
+      src="balloon-left.png" alt="balloon-left" class="balloon balloon--left"> <img
+      src="balloon-right.png" alt="balloon-right" class="balloon balloon--right">
+    <div class="frame">
+      <div class="img-back">
+        <div class="bd-pic"></div> <img class="cap" src="bday-cap.svg" alt=""> <img class="confetti"
+          src="confetti.svg" alt=""> <img class="cake" src="cake.svg" alt="">
+        <div class="velas">
+          <div class="fuego"></div>
+          <div class="fuego"></div>
+          <div class="fuego"></div>
+          <div class="fuego"></div>
+          <div class="fuego"></div>
+        </div>
+      </div>
+      <div class="HBD-text">
+        <p class="HBD">I Wish You All the Best ❤️</p>
+        <p class="nickname">Abdollah</p>
+      </div>
+    </div>
+    <div class="frame frame2">
+      <div class="scroll">
+        <div class="text">
+          <p>"Happy Birthday, dearest Mahsa!!! 
+            </p><br><p>
+            Your special day is here, and I hope it's every bit as extraordinary as you are.
+            </p><p> 
+            May this day overflow with love, laughter, treasured moments, and of course, wonderful presents! 
+            </p><p>
+            Wishing you many, many more candles to blow out alongside Hamed...
+            </p><p>
+            Have a fantastic birthday!"</p>
+            </p>
+          <p><br></p>
+          (I haven't forgotten your gift.😉 I'll give it to you when we meet.❤️)
+          <p><br></p>
+          <p><br></p>
+          <p><br></p>
+          <p><br></p>
+          <p><br></p>
+        </div>
+      </div>
+    </div>
+    <div class="flash"></div>
+    <div class="giftroom">
+      <p class="gift-text">Hey look! There's a gift for you..</p>
+      <p class="gift-text">let's open it and see what's in there!</p>
+    </div>
+    <div class="empty-room" id="room">
+      <p class="room-text">Wow! That was something weird.</p>
+      <p class="room-text">We have a lot of balloons here</p>
+      <p class="room-text">Let's burst the balloons...</p>
+      <p class="counter" style="display: none; height: 0; font-size: 20;">0</p>
+    </div>
+    <div class="darkroom">
+      <p class="bb-text read">Hey!</p>
+      <p class="bb-text">Why is it so dark here?</p>
+      <p class="bb-text">Can you please switch on the lights? </p>
+    </div>
+    <div class="btn switch" style="display: none;"></div>
+    <div class="btn-ref" style="display: none;">Click the Light Bulb.</div>
+  </div>
+  <div id="speechify-screenshot-mode"
+    style="position: fixed; top: 0px; right: 0px; width: 100%; min-height: 100%; z-index: 2147483640; display: none;">
+  </div>
+  <div id="speechify-global-notifications"></div>
+  <div id="speechify-summarization-fullscreen-mode"
+    style="position: fixed; inset: 0px; overflow: auto; background: white; z-index: 1999; display: none;"></div>
+  <div id="speechify-shortcuts-prompt"></div>
+</body>
+<script src="libraries/p5.js"></script>
+<script src="libraries/p5.dom.js"></script>
+<script src="libraries/p5.sound.js"></script>
+<script src="index.js"></script>
+</html>

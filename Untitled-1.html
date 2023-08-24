@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #happyBirthday {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="happyBirthday">
+        <p>Happy Birthday!</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script>
+        let balloons = [];
+        const totalBalloons = 28;
+        let burstBalloons = 0;
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            for (let i = 0; i < totalBalloons; i++) {
+                balloons.push(new Ballon());
+            }
+        }
+
+        function draw() {
+            background(0);
+
+            for (let balloon of balloons) {
+                balloon.show();
+                balloon.up();
+                balloon.checkEdge();
+
+                if (balloon.mouseHover() && mouseIsPressed) {
+                    balloon.upStep = 0; // Burst the balloon
+                    burstBalloons++;
+                }
+            }
+
+            if (burstBalloons === totalBalloons) {
+                showHappyBirthday();
+            }
+        }
+
+        function showHappyBirthday() {
+            const happyBirthday = document.getElementById('happyBirthday');
+            happyBirthday.style.display = 'block';
+        }
+
+        class Ballon {
+            constructor() {
+                this.r = random(90, 150);
+                this.pos = createVector(random(width), random(height, height + random(300, 700)));
+                this.upStep = random(2, 4);
+                this.red = random(100, 255);
+                this.green = random(100, 255);
+                this.blue = random(100, 255);
+                this.lineLen = random(150, 250);
+            }
+
+            show() {
+                push();
+                stroke(255);
+                strokeWeight(2);
+                line(this.pos.x, this.pos.y + this.r / 2 + 10, this.pos.x, this.pos.y + this.lineLen);
+                pop();
+
+                push();
+                fill(this.red, this.green, this.blue, 170);
+                noStroke();
+                ellipse(this.pos.x, this.pos.y, this.r, this.r + 10);
+                ellipse(this.pos.x, this.pos.y + this.r / 2 + 10, 10, 7);
+                pop();
+            }
+
+            up() {
+                this.pos.y -= this.upStep;
+            }
+
+            checkEdge() {
+                if (this.pos.y < 0 + this.r / 2 + 5) {
+                    this.pos.y = 0 + this.r / 2 + 5;
+                }
+            }
+
+            mouseHover() {
+                if (this.pos.x + this.r / 2 > mouseX && this.pos.x - this.r / 2 < mouseX) {
+                    if (this.pos.y + this.r / 2 > mouseY && this.pos.y - this.r / 2 < mouseY) {
+                        return true;
+                    }
+                } else {
+                    return false;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
